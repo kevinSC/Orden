@@ -5,10 +5,11 @@ def listGen(tamaño, rango=100):
         lista.append(random.random() * rango)
     return tuple(lista)
 
-print(listGen(5))
+
 def loadFromFile(name='data.txt', rango=100):
-    ''' Recibe el nombre de un archivo (str)
-        Retorna una lista de floats con cada uno 
+    '''
+        Recibe el nombre de un archivo (str)
+        Retorna una lista de floats con cada uno
         de los números extraídos del archivo name
     '''
     lista = []
@@ -17,7 +18,7 @@ def loadFromFile(name='data.txt', rango=100):
         lista.append(listGen(int(line), rango))
     archivo.close()
     return tuple(lista)
-print(loadFromFile())
+
 
 def sortBurbuja(Lista):
     ''' Recibe una tupla de floats
@@ -25,18 +26,22 @@ def sortBurbuja(Lista):
         que se toma el algoritmo de burbuja
         para ordenar la tupla L
     '''
+    archivo = open('burbuja.txt', 'w')
     c = 0
     L = list(Lista)
     tam = len(L)
     for i in range(1, tam):
         for j in range(0, tam - i):
+            archivo.write('')
             if(L[j] > L[j + 1]):
                 k = L[j + 1]
                 L[j + 1] = L[j]
                 L[j] = k
             c += 1
+
     return c
-print(sortBurbuja((3,2,8,10,5,23.5,22,80,1)))
+
+
 def sortSeleccion(Lista):
     ''' Recibe una lista de floats
         Retorna la cantidad de ciclos (int)
@@ -56,4 +61,3 @@ def sortSeleccion(Lista):
         L[minimo] = L[i]
         L[i] = aux
     return c
-print(sortSeleccion([3,2,8,10,5,23.5,22,80,1]))

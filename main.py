@@ -12,11 +12,11 @@ from matplotlib.figure import Figure
 # Funciones propias
 from sortfunc import *
 
-L_sin_ordenar=[]
+L_sin_ordenar = []
 # Metodos de ordenamiento
-def animacionBurbuja():    
+def animacionBurbuja():   
     global graficaDatos, L_sin_ordenar
-    abscisas = range(1,len(L_sin_ordenar)+1)
+    abscisas = range( 1, len(L_sin_ordenar) + 1)
     L = list(L_sin_ordenar)
     '''
     Ciclo externo:
